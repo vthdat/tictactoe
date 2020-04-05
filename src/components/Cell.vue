@@ -16,7 +16,7 @@
   .cell {
     width: 150px;
     height: 150px;
-    border: 2px solid rgb(75,75,75);
+    border: 1px solid rgb(75,75,75);
     font-size: 80px;
     display: flex;
     align-items: center;

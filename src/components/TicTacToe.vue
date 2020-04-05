@@ -35,7 +35,9 @@
         this.turn++;
         this.$forceUpdate();
       }
-    },
+    }
+
+
   }
 </script>
 
@@ -45,5 +47,6 @@
     flex-wrap: wrap;
     width: 500px;
     height: 500px;
+    align-self: center;
   }
 </style>
