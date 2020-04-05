@@ -1,11 +1,13 @@
 <template>
-  <div class="board">
-    <div v-for="(n, i) in 3">
-      <div v-for="(n, j) in 3">
-        <cell @click="newClicked(i,j)" :value="board[i][j]"></cell>
+    <div class="board">
+        <div v-for="(n, i) in 3">
+          <div v-for="(n, j) in 3">
+            <cell @click="newClicked(i,j)" :value="board[i][j]"></cell>
+          </div>
+        </div>
+        <button id="reset"> Reset </button>
       </div>
-    </div>
-  </div>
+
 </template>
 
 <script>
@@ -16,7 +18,7 @@
           ['', '', ''],
           ['', '', '']
         ],
-      turn: 0
+      flag: 1
     } },
 
 
@@ -25,14 +27,15 @@
         if (this.board[i][j] != ''){
           return;
         }
-        if ((this.turn % 2) == 0){
+        if (this.flag){
           this.board[i][j] = 'x';
+          this.flag = 0;
         }else
         {
           this.board[i][j] = 'o';
+          this.flag = 1;
         };
 
-        this.turn++;
         this.$forceUpdate();
       }
     }
